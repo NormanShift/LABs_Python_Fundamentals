@@ -1,5 +1,5 @@
 I'm using "interactive session" when writing and running/testing the code.
-This explains why seemingly big unrelated chunks of code remains "visible" and not commented out.
+This explains why perhaps seemingly big unrelated chunks of code remains "visible" and not commented out.
 
 For the LABs, there are however comments to separarate the diffrents problems from the LABs.
 

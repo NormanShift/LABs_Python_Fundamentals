@@ -290,3 +290,12 @@ for x in range(1, 4):
         print(f"({x}, {y})")
 
 # D:5
+# Simple 5x5 text grid using nested loops
+
+for x in range(1, 2):
+    for y in range(1, 6):
+        continue
+for z in range(1, 2):
+    for y in range(1, 6):
+        for z in range(1, 2):
+            print(f"{x}, {y}, {z}, {y}, {z}")

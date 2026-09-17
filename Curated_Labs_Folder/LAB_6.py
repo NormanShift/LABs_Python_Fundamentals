@@ -34,18 +34,132 @@ names_list = ["  jimmey  ","  ryu   ","  charlie    "," williams      "]
 #     print(names)
 
 # Or:
-clean_names = []
+# clean_names = []
 
-for name in names_list:
-    clean_names.append(name.strip().title())
+# for name in names_list:
+#     clean_names.append(name.strip().title())
 
-print(clean_names)
+# print(clean_names)
 
 # Or:
 clean_names = [name.strip().title() for name in names_list]
 
 print(clean_names)
 
-
+#--------------------------
 # A:4
+
+scores = [85, 62, 92, 70]
+
+passed = [score for score in scores if score >= 70]
+
+print("Passed:", passed)
+
+#--------------------------
+# A:5
+
+scores = [85, 62, 92, 70, 52]
+
+final_scores = ["Pass"
+    if score >= 70
+    else "Fail"
+    for score in scores
+    ] # Pass and Fail are added (assigned or "apended") to the list and is now populating the list
+
+print(final_scores)
+
+# A:6
+
+# 1st loop from previous lesson (list reused)
+numbers = [3, 8, 12, 5, 20, 7]
+
+# for number in numbers:
+#     if number >= 10:
+#         print(number)
+
+nine_up = [
+    number
+    for number in numbers
+    if number >= 10] # Add number to the list if number above 9.
+
+print(nine_up)
+
+# 2nd loop from previous lesson (list reused)
+numbers = [1, 2, 3, 4, 5, 6]
+
+# for number in numbers:
+#     if number % 2 == 0:
+#         print(number)
+
+even_numbers = [number for number in numbers if number % 2 == 0]
+
+print(even_numbers)
+
+# 3rd loop from previous lesson (parts reused)
+students = [
+    {"name": "Alice", "score": 85},
+    {"name": "Bob", "score": 65},
+    {"name": "Charlie", "score": 90},
+    {"name": "David", "score": 55}]
+
+def get_student_status(student):
+    if student["score"] >= 70:
+        return "Pass"
+    return "Fail"
+
+# for student in students:
+#     status = get_student_status(student) 
+#     print(f"{student['name']} has a score of {student['score']} and has {status}.")
+
+statuses = [
+    "Pass"
+    if student["score"] >= 70
+    else "Fail"
+    for student in students
+]
+
+print(statuses)
+
+student_results = [
+    f"{student['name']} has a score of {student['score']} and has {get_student_status(student)}."
+    for student in students
+]
+
+print(student_results)
+
+
+#---------------------
+# Part B - Dictionary and set comprehensions
+# B:1
+
+mapping_dict = {
+    number: number ** 2
+    for number in range(1, 11)}
+
+print(mapping_dict)
+
+#---------------------
+# B:2
+
+words = ["Krake", "Filur", "Kuf", "Genialitet", "Joker"]
+
+words_length = {
+    word: len(word)
+    for word in words
+    }
+
+print(words_length)
+
+#---------------------
+# B:3
+
+duplicates = ["Krake", "  Filur    ", "   Krake  ", "  Kuf   ", "   Genialitet  ", "  Joker   ", "  Filur  ", "  Kuf   "]
+
+no_duplicates = {word.strip().lower() for word in duplicates}
+
+print(no_duplicates) # The output is a set, which only accepts uniqe values (removes duplicates)
+print(sorted(no_duplicates))
+
+#---------------------
+# B:4
 

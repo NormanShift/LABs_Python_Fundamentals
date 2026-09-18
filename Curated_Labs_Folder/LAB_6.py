@@ -218,6 +218,8 @@ student_results = {
 print(student_results)
 
 #---------------------
+# Part C - enumerate
+
 # C:1
 
 playlist = ["C't By Me Larv", "A Turn In se herz", "RammSchwein", "Curly Lingers", "Be toven", "AlcaTrash"]
@@ -230,3 +232,8 @@ for track, song in enumerate(playlist, start=1):
     print(track, song)
 
 # C:2
+
+tasks = ["shop", "drive", "collect", "buy", "fetch", "relax"]
+
+for number, task in enumerate(tasks, start=1):
+    print(f"Task {number}: {task.capitalize()}")

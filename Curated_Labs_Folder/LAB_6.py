@@ -197,5 +197,21 @@ if product_info["price"] < threshold
 
 print(cheap_products)
 
+# print(products.items())
+
 # B:5
 
+students_list = [
+    {"name": "Alice", "age": 20, "major": "Computer Science", "score": 95, "grade": "A"},
+    {"name": "Bob", "age": 22, "major": "Mathematics", "score": 86, "grade": "A"},
+    {"name": "Charlie", "age": 21, "major": "Physics", "score": 80, "grade": "B"},
+    {"name": "David", "age": 23, "major": "Biology", "score": 85, "grade": "A"}
+]
+
+
+student_results = {
+    student["name"]: "PASS" if student["score"] >= 70 else "FAIL"
+    for student in students_list
+}
+
+print(student_results)

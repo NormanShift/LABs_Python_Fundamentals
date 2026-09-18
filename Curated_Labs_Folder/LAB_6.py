@@ -163,3 +163,39 @@ print(sorted(no_duplicates))
 #---------------------
 # B:4
 
+# A dictionary of dictionaries.
+products = {
+    "P01": {
+        "name": "Laptop",
+        "price": 999.99,
+        "stock": 15
+        },
+    "P02": {
+        "name": "Mouse",
+        "price": 24.99,
+        "stock": 50,
+        },
+    "P03": {
+        "name": "Keyboard",
+        "price": 49.99,
+        "stock": 30
+        },
+    "P04": {
+        "name": "Monitor",
+        "price": 69.95,
+        "stock": 9
+        },
+    }
+
+threshold = 100
+
+cheap_products = {
+product_id: product_info
+for product_id, product_info in products.items()
+if product_info["price"] < threshold
+} # Filter: Below threshold
+
+print(cheap_products)
+
+# B:5
+

@@ -199,6 +199,7 @@ print(cheap_products)
 
 # print(products.items())
 
+#---------------------
 # B:5
 
 students_list = [
@@ -215,3 +216,12 @@ student_results = {
 }
 
 print(student_results)
+
+#---------------------
+# C:1
+
+playlist = ("C't By Me Larv", "A Turn In se herz", "RammSchwein", "Curly Lingers", "Be toven", "AlcaTrash")
+
+n_playlist = enumerate(playlist)
+
+print(list(n_playlist))

@@ -220,8 +220,13 @@ print(student_results)
 #---------------------
 # C:1
 
-playlist = ("C't By Me Larv", "A Turn In se herz", "RammSchwein", "Curly Lingers", "Be toven", "AlcaTrash")
+playlist = ["C't By Me Larv", "A Turn In se herz", "RammSchwein", "Curly Lingers", "Be toven", "AlcaTrash"]
 
-n_playlist = enumerate(playlist)
+n_playlist = enumerate(playlist, start=1)
 
-print(list(n_playlist))
+# print(list(n_playlist)) # Works but output can be prettier
+
+for track, song in enumerate(playlist, start=1):
+    print(track, song)
+
+# C:2

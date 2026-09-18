@@ -281,3 +281,13 @@ print(dict(zip(names, scores)))
 
 # D:3
 
+products = []
+
+prices = []
+
+stock = []
+
+for name, score in zip(names, scores):
+    print(products, prices, stock)
+
+

@@ -237,3 +237,17 @@ tasks = ["shop", "drive", "collect", "buy", "fetch", "relax"]
 
 for number, task in enumerate(tasks, start=1):
     print(f"Task {number}: {task.capitalize()}")
+
+
+# C:3
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+threshold = 5
+
+for i, number in enumerate(numbers, start=0): # For lists, index starts at 0.
+    if i >= threshold:
+        print("Index above threshold:", i) # Actually prinding indes numbers of any given list.
+
+
+# C:4

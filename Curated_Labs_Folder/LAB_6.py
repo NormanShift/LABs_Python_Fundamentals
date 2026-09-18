@@ -251,3 +251,29 @@ for index, number in enumerate(numbers, start=0): # For lists, index starts at 0
 
 
 # C:4
+
+languages = ["Python", "Java", "C#", "JavaScript"]
+
+# Old version:
+for i in range(len(languages)):
+    print(languages[i])
+
+# New version:
+for index, language in enumerate(languages):
+    print(index, language)
+
+
+# Part D - zip and unpacking
+
+# D:1
+
+names = ["Jimmey","Ryu","Charlie","Williams"]
+
+scores = [1, 2, 3, 4]
+
+for name, score in zip(names, scores):
+    print(name, score)
+
+
+# D:2
+

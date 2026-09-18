@@ -277,3 +277,7 @@ for name, score in zip(names, scores):
 
 # D:2
 
+print(dict(zip(names, scores)))
+
+# D:3
+

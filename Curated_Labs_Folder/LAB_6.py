@@ -222,7 +222,7 @@ print(student_results)
 
 playlist = ["C't By Me Larv", "A Turn In se herz", "RammSchwein", "Curly Lingers", "Be toven", "AlcaTrash"]
 
-n_playlist = enumerate(playlist, start=1)
+# n_playlist = enumerate(playlist, start=1)
 
 # print(list(n_playlist)) # Works but output can be prettier
 

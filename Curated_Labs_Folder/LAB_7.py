@@ -134,3 +134,38 @@ print(f"Title: {book1.title}\nAuthor: {book1.author}\nPages: {book1.pages}\nExce
 print(f"Title: {book2.title}\nAuthor: {book2.author}\nPages: {book2.pages}\nExceeds 300p: {book2.is_long()}\n")
 print(f"Title: {book3.title}\nAuthor: {book3.author}\nPages: {book3.pages}\nExceeds 300p: {book3.is_long()}\n")
 print(f"Title: {book4.title}\nAuthor: {book4.author}\nPages: {book4.pages}\nExceeds 300p: {book4.is_long()}\n")
+
+#------------------------------
+
+# B:2
+
+class BankAccount():
+    def __init__(self, owner, balance = 0.0):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        return
+    
+    def withdrawal(self, amount):
+            self.balance -= amount
+            return
+
+
+account1 = BankAccount("Charles Quintin", 30200.76)
+
+print(f"Balance: {account1.balance:.2f}")
+
+account1.deposit(32000)
+
+print(f"Updated balance: {account1.balance:.2f}")
+
+account1.withdrawal(2700)
+
+print(f"Updated balance: {account1.balance:.2f}")
+
+#------------------
+
+# B:3
+

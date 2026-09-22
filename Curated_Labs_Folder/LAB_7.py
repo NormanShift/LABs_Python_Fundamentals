@@ -225,4 +225,37 @@ print(reopen)
 
 #------------------
 # B:5
+# Object state demo:
+
+class Book():
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+
+book1 = Book(
+    title = "Dramatichus",
+    author = "Emmeralda Smithsonian",
+    pages = 348
+)
+
+book2 = Book(
+    title = "Dramatichus",
+    author = "Emmeralda Smithsonian",
+    pages = 348
+)
+
+print("Book2 pages:", book2.pages)
+
+book2.pages = 550
+
+print("Book1 pages:", book1.pages)
+print("Book2 pages updated:", book2.pages)
+print("Book1 stays the same:", book1.pages)
+
+#--------------------
+# Part C - Instance and class attributes
+
+# C:1
 

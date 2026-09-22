@@ -11,7 +11,7 @@
 #         self.pages =pages
 
 
-# book1 = Book("Dramatichus", "Emmerald Smithsonian", 384)
+# book1 = Book("Dramatichus", "Emmeralda Smithsonian", 384)
 # book2 = Book("Gebraldar Man", "Kubriq Wilderson", 455)
 # book3 = Book("The Fornicus Debacle", "Stalind Colaugustine", 280)
 # book4 = Book("Hollywood & NASA", "Stanley Cathron", 89)
@@ -50,19 +50,41 @@
 
 # A:3
 
-class Laptop():
-    def __init__(
-            self, brand, model, ram_gb, price):
-        self.brand = brand
-        self.model = model
-        self.ram_gb = ram_gb
-        self.price = price
+# class Laptop():
+#     def __init__(
+#             self, brand, model, ram_gb, price):
+#         self.brand = brand
+#         self.model = model
+#         self.ram_gb = ram_gb
+#         self.price = price
 
 
-laptop1 = Laptop("Compaq", "T-800", 32, 1595.95)
-laptop2 = Laptop("MSI", "Stealth G8", 32, 1595.95)
+# laptop1 = Laptop("Compaq", "T-800", 32, 1595.95)
+# laptop2 = Laptop("MSI", "Stealth G8", 32, 1595.95)
 
-print("Same instance (?):", laptop1 is laptop2)
+# print("Same instance (?):", laptop1 is laptop2)
+
+#------------------------------
 
 # A:4
 
+class Book():
+    def __init__(self, title, author, pages = 346):
+        self.title = title
+        self.author = author
+        self.pages =pages
+
+
+book1 = Book("Dramatichus", "Emmeralda Smithsonian")
+print("Title:", book1.title)
+print("Author:", book1.author)
+print("Default:", book1.pages)
+
+#------------------------------
+
+# A:5
+
+
+
+
+#------------------------------

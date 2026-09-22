@@ -147,10 +147,6 @@ class BankAccount():
     def deposit(self, amount):
         self.balance += amount
         return
-    
-    def withdrawal(self, amount):
-            self.balance -= amount
-            return
 
 
 account1 = BankAccount("Charles Quintin", 30200.76)
@@ -161,11 +157,35 @@ account1.deposit(32000)
 
 print(f"Updated balance: {account1.balance:.2f}")
 
-account1.withdrawal(2700)
-
-print(f"Updated balance: {account1.balance:.2f}")
-
 #------------------
 
 # B:3
 
+class BankAccount():
+    def __init__(self, owner, balance = 0.0):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        return
+    
+    def withdrawal(self, amount):
+        if amount > self.balance:
+            raise ValueError(
+                "!Negative balance prohibited!"
+            )
+        self.balance -= amount
+
+
+account1 = BankAccount("Charles Quintin", 30200.76)
+
+print(f"Balance: {account1.balance:.2f}")
+
+account1.deposit(32000)
+
+print(f"Updated balance: {account1.balance:.2f}")
+
+account1.withdrawal(62201)
+
+print(f"Updated balance: {account1.balance:.2f}")

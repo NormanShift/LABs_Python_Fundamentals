@@ -115,19 +115,22 @@ class Book():
         self.pages = pages
 
     def is_long(self):
-        return self.pages >= 300
+        # return self.pages >= 300
+        if self.pages >= 300:
+            return bool(True)
+        else:
+            return bool(False)
+
     
-
-
 
 book1 = Book("Dramatichus", "Emmeralda Smithsonian", 384)
 book2 = Book("Gebraldar Man", "Kubriq Wilderson", 455)
 book3 = Book("The Fornicus Debacle", "Stalind Colaugustine", 280)
 book4 = Book("Hollywood & NASA", "Stanley Cathron", 89)
 
-print(book1.is_long())
+# print("Exceeds 300p:", book1.is_long())
 
-print(f"Title: {book1.title}\nAuthor: {}\nPages: {book1.pages}\n")
-print(f"Title: {book2.title}\nAuthor: {book2.author}\nPages: {book2.pages}\n")
-print(f"Title: {book3.title}\nAuthor: {book3.author}\nPages: {book3.pages}\n")
-print(f"Title: {book4.title}\nAuthor: {book4.author}\nPages: {book4.pages}\n")
+print(f"Title: {book1.title}\nAuthor: {book1.author}\nPages: {book1.pages}\nExceeds 300p: {book1.is_long()}\n")
+print(f"Title: {book2.title}\nAuthor: {book2.author}\nPages: {book2.pages}\nExceeds 300p: {book2.is_long()}\n")
+print(f"Title: {book3.title}\nAuthor: {book3.author}\nPages: {book3.pages}\nExceeds 300p: {book3.is_long()}\n")
+print(f"Title: {book4.title}\nAuthor: {book4.author}\nPages: {book4.pages}\nExceeds 300p: {book4.is_long()}\n")

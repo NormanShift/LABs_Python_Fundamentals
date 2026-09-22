@@ -189,3 +189,36 @@ print(f"Updated balance: {account1.balance:.2f}")
 account1.withdrawal(62201)
 
 print(f"Updated balance: {account1.balance:.2f}")
+
+#------------------
+# B:4
+
+class Task():
+    def __init__(self, title, completed=False):
+        self.title = title
+        self.completed = completed
+
+    def complete(self):
+        self.completed = True
+        return "Closed ticket"
+
+    def reopen(self):
+        self.complete = False
+        return "Reopened ticket"
+
+
+task1 = Task("Ticket", False)
+
+print("Output", vars(task1))
+
+solved = task1.complete()
+
+print(solved)
+
+reopen = task1.reopen()
+
+print(reopen)
+
+#------------------
+# B:5
+

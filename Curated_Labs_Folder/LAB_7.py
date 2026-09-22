@@ -68,23 +68,41 @@
 
 # A:4
 
-class Book():
-    def __init__(self, title, author, pages = 346):
-        self.title = title
-        self.author = author
-        self.pages =pages
+# class Book():
+#     def __init__(self, title, author, pages = 346):
+#         self.title = title
+#         self.author = author
+#         self.pages =pages
 
 
-book1 = Book("Dramatichus", "Emmeralda Smithsonian")
-print("Title:", book1.title)
-print("Author:", book1.author)
-print("Default:", book1.pages)
+# book1 = Book("Dramatichus", "Emmeralda Smithsonian")
+# print("Title:", book1.title)
+# print("Author:", book1.author)
+# print("Default:", book1.pages)
 
 #------------------------------
 
 # A:5
 
+class Book():
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages =pages
 
+
+book1 = Book(
+    title = "Dramatichus",
+    author = "Emmeralda Smithsonian",
+    pages = 348
+)
+
+print("Title:", book1.title)
+print("Author:", book1.author)
+print("Default:", book1.pages)
 
 
 #------------------------------
+
+# B:1
+

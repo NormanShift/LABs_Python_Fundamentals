@@ -222,7 +222,7 @@ print(student_results)
 
 # C:1
 
-playlist = ["C't By Me Larv", "A Turn In se herz", "RammSchwein", "Curly Lingers", "Be toven", "AlcaTrash"]
+playlist = ["C't Buy Me Larv", "A thorn in se herz", "RammSchwein", "Curly Lingers", "Bee Thoven", "AlcaTrash"]
 
 # n_playlist = enumerate(playlist, start=1)
 
@@ -281,9 +281,9 @@ print(dict(zip(names, scores)))
 
 # D:3
 
-products = []
+products = ["Lamp", "Armature", "Bulb", "Lampshade"]
 
-prices = []
+prices = [120.95,]
 
 stock = []
 

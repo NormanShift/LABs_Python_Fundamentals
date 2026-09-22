@@ -4,26 +4,51 @@
 
 # A:1
 
-class Book():
-    def __init__(self, title, author, pages):
-        self.title = title
-        self.author = author
-        self.pages =pages
+# class Book():
+#     def __init__(self, title, author, pages):
+#         self.title = title
+#         self.author = author
+#         self.pages =pages
 
 
-book1 = Book("Dramatichus", "Emmerald Smithsonian", 384)
-book2 = Book("Gebraldar Man", "Kubriq Wilderson", 455)
-book3 = Book("The Fornicus Debacle", "Stalind Colaugustine", 280)
-book4 = Book("Hollywood & NASA", "Stanley Cathron", 89)
+# book1 = Book("Dramatichus", "Emmerald Smithsonian", 384)
+# book2 = Book("Gebraldar Man", "Kubriq Wilderson", 455)
+# book3 = Book("The Fornicus Debacle", "Stalind Colaugustine", 280)
+# book4 = Book("Hollywood & NASA", "Stanley Cathron", 89)
 
-print(f"Title: {book1.title}\nAuthor: {book1.author}\nPages: {book1.pages}\n")
-print(f"Title: {book2.title}\nAuthor: {book2.author}\nPages: {book2.pages}\n")
-print(f"Title: {book3.title}\nAuthor: {book3.author}\nPages: {book3.pages}\n")
-print(f"Title: {book4.title}\nAuthor: {book4.author}\nPages: {book4.pages}\n")
+# print(f"Title: {book1.title}\nAuthor: {book1.author}\nPages: {book1.pages}\n")
+# print(f"Title: {book2.title}\nAuthor: {book2.author}\nPages: {book2.pages}\n")
+# print(f"Title: {book3.title}\nAuthor: {book3.author}\nPages: {book3.pages}\n")
+# print(f"Title: {book4.title}\nAuthor: {book4.author}\nPages: {book4.pages}\n")
 
 #------------------------------
 
 #  A:2
+
+# class Laptop():
+#     def __init__(
+#             self, brand, model, ram_gb, price):
+#         self.brand = brand
+#         self.model = model
+#         self.ram_gb = ram_gb
+#         self.price = price
+
+
+# laptop1 = Laptop("Compaq", "T-800", 32, 1595.95)
+# laptop2 = Laptop("MSI", "Stealth G8", 32, 1595.95)
+# laptop3 = Laptop("ASUS", "Republic OC-ed", 32, 1595.95)
+
+# print(vars(laptop1))
+# print(vars(laptop2))
+# print("Recommended price:", laptop3.price)
+
+# laptop3.price = 1495.95
+
+# print("Discounted:" , laptop3.price)
+
+#------------------------------
+
+# A:3
 
 class Laptop():
     def __init__(
@@ -36,17 +61,8 @@ class Laptop():
 
 laptop1 = Laptop("Compaq", "T-800", 32, 1595.95)
 laptop2 = Laptop("MSI", "Stealth G8", 32, 1595.95)
-laptop3 = Laptop("ASUS", "Republic OC-ed", 32, 1595.95)
 
-print(vars(laptop1))
-print(vars(laptop2))
-print("Recommended price:", laptop3.price)
+print("Same instance (?):", laptop1 is laptop2)
 
-laptop3.price = 1495.95
-
-print("Discounted:" , laptop3.price)
-
-#------------------------------
-
-# A:3
+# A:4
 

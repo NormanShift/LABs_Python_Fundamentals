@@ -203,11 +203,11 @@ class Task():
         return "Closed ticket"
 
     def reopen(self):
-        self.complete = False
+        self.completed = False
         return "Reopened ticket"
 
 
-task1 = Task("Ticket", False)
+task1 = Task("Ticket")
 
 print("Output", vars(task1))
 
@@ -215,7 +215,11 @@ solved = task1.complete()
 
 print(solved)
 
+# print("Output", vars(task1))
+
 reopen = task1.reopen()
+
+# print("Output", vars(task1))
 
 print(reopen)
 

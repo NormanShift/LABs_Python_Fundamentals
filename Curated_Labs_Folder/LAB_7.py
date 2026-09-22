@@ -25,3 +25,28 @@ print(f"Title: {book4.title}\nAuthor: {book4.author}\nPages: {book4.pages}\n")
 
 #  A:2
 
+class Laptop():
+    def __init__(
+            self, brand, model, ram_gb, price):
+        self.brand = brand
+        self.model = model
+        self.ram_gb = ram_gb
+        self.price = price
+
+
+laptop1 = Laptop("Compaq", "T-800", 32, 1595.95)
+laptop2 = Laptop("MSI", "Stealth G8", 32, 1595.95)
+laptop3 = Laptop("ASUS", "Republic OC-ed", 32, 1595.95)
+
+print(vars(laptop1))
+print(vars(laptop2))
+print("Recommended price:", laptop3.price)
+
+laptop3.price = 1495.95
+
+print("Discounted:" , laptop3.price)
+
+#------------------------------
+
+# A:3
+

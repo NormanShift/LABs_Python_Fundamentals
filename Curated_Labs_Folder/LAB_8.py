@@ -24,12 +24,34 @@ bad_team2.add_member("Ada Macintosh")
 print(bad_team1.members)
 print(bad_team2.members)
 
-# Verdict (A:2): Since the list "members=[]" is being defined in the properties of the "BadTeam class", the "members-property" refers to the same list. Hence, n objects (any number of objects created or instantiated) points to the same list in memory.
+# Verdict (A:2): Since the list "members=[]" is being declared and initialized as a property of the "BadTeam class", the "members-property" refers to the same list. Hence, n objects (any number of objects created or instantiated) points to the same list in memory.
 
 #-------------------------------------
 # A:3
 
+class Team:
+    def __init__(self, name, members = None):
+        self.name = name
 
+        if members is None:
+            self.members = []
+
+    def add_member(self, member):
+        self.members.append(member)
+
+#-------------------------------------
+# A:2 (usint the class from A:1)
+
+team1 = Team("Buffalo Sabres")
+team2 = Team("Piladelphia Flyers")
+
+team1.add_member("Jerry Maguire")
+team2.add_member("Ada Macintosh")
+
+print(team1.members)
+print(team2.members)
+
+# Corrected version of A1/A2 (above this comment). Now each object created from the class points to separate independed lists.
 
 #-------------------------------------
 # A:4

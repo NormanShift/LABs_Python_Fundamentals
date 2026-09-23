@@ -5,12 +5,26 @@
 
 # A:1
 
+class BadTeam:
+    def __init__(self, name, members=[]):
+        self.name = name
+        self.members = members
 
+    def add_member(self, member):
+        self.members.append(member)
 
 #-------------------------------------
-# A:2
+# A:2 (usint the class from A:1)
 
+bad_team1 = BadTeam("Buffalo Sabres")
+bad_team2 = BadTeam("Piladelphia Flyers")
 
+bad_team2.add_member("Ada Macintosh")
+
+print(bad_team1.members)
+print(bad_team2.members)
+
+# Verdict (A:2): Since the list "members=[]" is being defined in the properties of the "BadTeam class", the "members-property" refers to the same list. Hence, n objects (any number of objects created or instantiated) points to the same list in memory.
 
 #-------------------------------------
 # A:3

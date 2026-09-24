@@ -121,29 +121,27 @@ for out in peripherals:
 
 # Part D - isinstance()
 
-# D:1
+# D:1 - D:5
+
+class User:
+    def __init__(self):
+        pass
+
+class AdminUser(User):
+    pass
 
 
+admin = AdminUser()
 
-#-------------------------------------
-# D:2
+is_admin_admin = isinstance(admin, (AdminUser))
+is_admin_user = isinstance(admin, (User))
+is_admin_string = isinstance(admin, (str))
 
+print("Is AdminUser an AdminUser:", is_admin_admin)
+print("Is AdminUser also a User:", is_admin_user)
+print("Is AdminUser a String:", is_admin_string)
 
-
-#-------------------------------------
-# D:3
-
-
-
-#-------------------------------------
-# D:4
-
-
-
-#-------------------------------------
-# D:5
-
-
+# Explanation: The instance of AdminUser is also considered to be a User because AdminUser inherits the members of the User class.
 
 #-------------------------------------
 

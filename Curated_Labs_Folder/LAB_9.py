@@ -20,19 +20,32 @@ class PushNotification:
         return "Pushed notification to mobile device"
 
 
+# email = EmailNotification()
+# sms = SMSNotification()
+# push = PushNotification()
 
-email = EmailNotification()
-sms = SMSNotification()
-push = PushNotification()
+# m_srv = [
+#     email.send(),
+#     sms.send(),
+#     push.send()
+# ]
 
+# print(m_srv)
 
+msg_srv = [
+    EmailNotification(),
+    SMSNotification(),
+    PushNotification()
+]
 
+for message in msg_srv:
+    print(message.send())
 
-print(email.send())
-print(sms.send())
-print(push.send())
+# print(email.send())
+# print(sms.send())
+# print(push.send())
 
-
+# Explanation: In this example, each object has a method called send(). There is no inheritance taking place, so talking about each object having it's own implementation of an inherited member does not apply here. But it's still polymorphism.
 
 #-------------------------------------
 # A:2

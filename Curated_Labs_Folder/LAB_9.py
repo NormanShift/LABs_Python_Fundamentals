@@ -1,9 +1,8 @@
 # LAB 9
 
-
 # Part A - Polymorphism
 
-# A:1
+# A:1 - A:5
 
 class EmailNotification:
     def send(self):
@@ -46,26 +45,6 @@ for message in msg_srv:
 # print(push.send())
 
 # Explanation: In this example, each object has a method called send(). There is no inheritance taking place, so talking about each object having it's own implementation of an inherited member does not apply here. But it's still polymorphism.
-
-#-------------------------------------
-# A:2
-
-
-
-#-------------------------------------
-# A:3
-
-
-
-#-------------------------------------
-# A:4
-
-
-
-#-------------------------------------
-# A:5
-
-
 
 #-------------------------------------
 

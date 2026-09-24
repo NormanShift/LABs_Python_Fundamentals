@@ -193,7 +193,7 @@ print("Object Type:", type(prod_str))
 
 # Part F - __str__ with inheritance
 
-# F:1
+# F:1 - F:5
 
 class Account:
     def __init__(self, owner, balance):
@@ -208,38 +208,16 @@ class SavingsAccount(Account):
         super().__init__(owner, balance)
         self.interest_rate = interest_rate
 
-        def __str__(self):
-            return f"Name: {owner}\nPrice: {balance}\niRate: {self.interest_rate}n"
+    def __str__(self):
+        return f"Name: {self.owner}\nPrice: {self.balance}\niRate: {self.interest_rate}"
 
 
 account = Account("Girbraldazaar Gülasch", 200000)
 
 savings_acc = SavingsAccount("Margot Touchér", 500000, 0.02)
 
-print(account, savings_acc)
-
-
-
-
-#-------------------------------------
-# F:2
-
-
-
-#-------------------------------------
-# F:3
-
-
-
-#-------------------------------------
-# F:4
-
-
-
-#-------------------------------------
-# F:5
-
-
+print(account)
+print(savings_acc)
 
 #-------------------------------------
 

@@ -145,35 +145,51 @@ print("Is AdminUser a String:", is_admin_string)
 
 #-------------------------------------
 
-
 # Part E - __str__
 
-# E:1
+# E:1 - E:5
 
+# Without __str__ the output is: <__main__.Product object at 0x00000174BE0F7A10>
+
+# class Product:
+#     def __init__(self, name, price):
+#         self.name = name
+#         self.price = price
+        
+
+# product = Product("Karl Ada", 105)
+
+# print(product)
+
+
+# Using __str__ "magic method" below:
+
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def __str__(self):
+        return f"Name: {self.name}\nPrice: {self.price} Skr"
+        
+
+product = Product("Cliché Generator", 1059.95)
+produgjd = Product("Hair Dryer Deluxe Ed.", 5555.55)
+produc = Product("Powder Toast Man Figurine", 499.50)
+project = Product("Traumatizer", 9999.99)
+
+
+print(product)
+print(produgjd)
+print(produc)
+print(project)
+
+prod_str = str(product)
+
+print("Object Type:", type(prod_str))
 
 
 #-------------------------------------
-# E:2
-
-
-
-#-------------------------------------
-# E:3
-
-
-
-#-------------------------------------
-# E:4
-
-
-
-#-------------------------------------
-# E:5
-
-
-
-#-------------------------------------
-
 
 # Part F - __str__ with inheritance
 

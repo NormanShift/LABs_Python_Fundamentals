@@ -195,6 +195,30 @@ print("Object Type:", type(prod_str))
 
 # F:1
 
+class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+    def __str__(self):
+        return f"Name: {self.owner}\nPrice: ${self.balance}"
+
+
+class SavingsAccount(Account):
+    def __init__(self, owner, balance, interest_rate):
+        super().__init__(owner, balance)
+        self.interest_rate = interest_rate
+
+        def __str__(self):
+            return f"Name: {owner}\nPrice: {balance}\niRate: {self.interest_rate}n"
+
+
+account = Account("Girbraldazaar Gülasch", 200000)
+
+savings_acc = SavingsAccount("Margot Touchér", 500000, 0.02)
+
+print(account, savings_acc)
+
+
 
 
 #-------------------------------------

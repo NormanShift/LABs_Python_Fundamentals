@@ -90,31 +90,30 @@ for doc in subdocs:
 
 #-------------------------------------
 
-
 # Part C - Duck typing
 
-# C:1
+# C:1 - C:5
 
+class Printer:
+    def output(self):
+        return "The Printer prints."
 
+class Screen:
+    def output(self):
+        return "The Screen emits."
 
-#-------------------------------------
-# C:2
+peripherals = [
+    Printer(),
+    Screen()
+]
 
+for out in peripherals:
+    print(out.output()) # Uses "Duck Typing"
 
-
-#-------------------------------------
-# C:3
-
-
-
-#-------------------------------------
-# C:4
-
-
-
-#-------------------------------------
-# C:5
-
+# Explanation: Robot and Dog do not inherit from the same base class, but both
+# provide the same method. This works because of duck typing:
+# if an object has the required method, Python can use it without
+# requiring a shared parent class.
 
 
 #-------------------------------------

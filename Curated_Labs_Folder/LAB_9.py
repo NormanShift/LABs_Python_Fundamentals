@@ -51,27 +51,40 @@ for message in msg_srv:
 
 # Part B - Polymorphism with inheritance
 
-# B:1
+# B:1 to B:5
+
+class Document:
+    def __init__(self, title):
+        self.title = title
+
+    def describe(self):
+        return "This is the main Document."
 
 
-
-#-------------------------------------
-# B:2
-
-
-
-#-------------------------------------
-# B:3
+class PDFDocument(Document):
+    # __init__ runs on the inherited baseclass
+    def describe(title):
+        return "The PDF is a Document."
 
 
+class TextDocument(Document):
+        # __init__ runs on the inherited baseclass
+        def describe(title):
+            return "Text is also a Document."
 
-#-------------------------------------
-# B:4
+
+subdocs = [
+    PDFDocument("Booklets"),
+    TextDocument("Let there be Books"),
+    PDFDocument("The Drafted Man"),
+    TextDocument("Entitled and Title-mente")
+]
 
 
+titles = subdocs[1]
 
-#-------------------------------------
-# B:5
+for doc in subdocs:
+    print(f"{doc.title}: {doc.describe()}")
 
 
 

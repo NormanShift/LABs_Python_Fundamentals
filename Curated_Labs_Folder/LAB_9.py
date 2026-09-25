@@ -222,8 +222,6 @@ print(savings_acc)
 #-------------------------------------
 # Part G - Inheritance or composition?
 
-# G:1
-
 class CPU:
     def __init__(self, model):
         self.model = model
@@ -235,7 +233,7 @@ class Computer:
         self.cpu = cpu
 
 # Create a CPU object and pass it to a Computer object.
-cpu1 = CPU("AMD Ryzen 7 7800X3D")
+cpu1 = CPU("AMD Ryzen")
 computer1 = Computer("ASUS", cpu1)
 
 # Print the computer brand and CPU model through the Computer object.

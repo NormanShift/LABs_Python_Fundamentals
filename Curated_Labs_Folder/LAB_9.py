@@ -220,38 +220,51 @@ print(account)
 print(savings_acc)
 
 #-------------------------------------
-
-
 # Part G - Inheritance or composition?
 
 # G:1
 
+class CPU:
+    def __init__(self, model):
+        self.model = model
 
+# This uses composition rather than inheritance.
+class Computer:
+    def __init__(self, brand, cpu):
+        self.brand = brand
+        self.cpu = cpu
 
-#-------------------------------------
-# G:2
+# Create a CPU object and pass it to a Computer object.
+cpu1 = CPU("AMD Ryzen 7 7800X3D")
+computer1 = Computer("ASUS", cpu1)
 
+# Print the computer brand and CPU model through the Computer object.
+print("Computer brand:", computer1.brand)
+print("CPU model:", computer1.cpu.model)
 
+# Computer HAS-A CPU makes more sense than Computer IS-A CPU.
+# A CPU is one component contained inside a computer.
+# A computer is not a specialized type of CPU, so inheritance
+# would not describe the relationship correctly.
 
-#-------------------------------------
-# G:3
-
-
-
-#-------------------------------------
-# G:4
-
-
-
-#-------------------------------------
-# G:5
-
-
-
-#-------------------------------------
 # G:6
+# Decide between inheritance and composition for each pair.
 
+# Car / Engine:
+# Composition because a Car HAS-A Engine.
+# A Car is not a type of Engine.
 
+# Manager / Employee:
+# Inheritance because a Manager IS-AN Employee.
+# Manager can inherit common Employee attributes and methods.
+
+# Course / Teacher:
+# Composition because a Course HAS-A Teacher.
+# A Course is not a type of Teacher.
+
+# Phone / Device:
+# Inheritance because a Phone IS-A Device.
+# Phone can inherit common Device attributes and methods.
 
 #-------------------------------------
 

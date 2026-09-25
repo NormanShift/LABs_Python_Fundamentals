@@ -300,10 +300,20 @@ class SummaryExporter(Exporter):
     def __str__(self):
         return f"Summary Exporter. DataOverrides export() ."
 
+
+class AddedExporterClass:
+    def export(self, data):
+        self.data = data
+        return f"Added Exporter Data: {self.data}"
+    def __str__(self):
+        return f"No inheritance. Added Exporter. DataOverrides export() ."
+
+# Defining a list for demonstrating polymorphism when iterated on (if).
 exporters = [
     ConsoleExporter(),
     TextExporter(),
-    SummaryExporter()
+    SummaryExporter(),
+    AddedExporterClass()
 ]
 
 number = 1567
@@ -323,44 +333,3 @@ for value in exporters:
 
 
 #-------------------------------------
-# H:2
-
-
-
-#-------------------------------------
-# H:3
-
-
-
-#-------------------------------------
-# H:4
-
-
-
-#-------------------------------------
-# H:5
-
-
-
-#-------------------------------------
-# H:6
-
-
-
-#-------------------------------------
-# H:7
-
-
-
-#-------------------------------------
-# H:8
-
-
-
-#-------------------------------------
-# H:9
-
-
-
-#-------------------------------------
-# H:10

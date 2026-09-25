@@ -283,22 +283,22 @@ class ConsoleExporter(Exporter):
         self.data = data
         return f"ConsoleExporter Data: {self.data}"
     def __str__(self):
-        return "Console Exporter. Overrides export() ."
+        return "Console Exporter. Overrides export()"
 
 class TextExporter(Exporter):
     def export(self, data):
         self.data = data
-        return f"TextExporter Data: {self.data}"
+        return f"Text export contains the value {data}."
     def __str__(self):
-        return "Text Exporter. Overrides export() ."
+        return "Text Exporter. Overrides export()"
 
 
 class SummaryExporter(Exporter):
     def export(self, data):
         self.data = data
-        return f"Summary Exporter Data: {self.data}"
+        return f"Summary: data type is {type(data).__name__}, value is {data}"
     def __str__(self):
-        return f"Summary Exporter. DataOverrides export() ."
+        return f"Summary Exporter. DataOverrides export()"
 
 
 class AddedExporterClass:
@@ -306,7 +306,7 @@ class AddedExporterClass:
         self.data = data
         return f"Added Exporter Data: {self.data}"
     def __str__(self):
-        return f"No inheritance. Added Exporter. DataOverrides export() ."
+        return f"No inheritance: Added Exporter."
 
 # Defining a list for demonstrating polymorphism when iterated on (if).
 exporters = [
@@ -318,8 +318,12 @@ exporters = [
 
 number = 1567
 
-for value in exporters:
-    print(value.export(number))
+# for exporter in exporters: # Call also includes the added, non inherited class.
+#     print(exporter)
+#     print(exporter.export(number))
+
+
+# print(isinstance(ConsoleExporter(), Exporter)) # Returns True. (IS-A)
 
 # print(Exporter().export(120))
 # print(ConsoleExporter().export(1500))
@@ -327,9 +331,23 @@ for value in exporters:
 # print(TextExporter().export(12578))
 # print(SummaryExporter().export(322))
 
+class ExportManager:
+    def __init__(self, exporters):
+        self.exporters = exporters
+    def run_exports(self, data):
+        for exporter in self.exporters:
+            print(exporter)
+            print(exporter.export(data))
+
+manager = ExportManager(exporters) # Passes the exporters list.
+
+manager.run_exports(number)
 
 
-
+# Composition:
+# ExportManager HAS a collection of exporter objects.
+# ExportManager is not a type of Exporter, so inheritance would
+# not describe this relationship correctly.
 
 
 #-------------------------------------

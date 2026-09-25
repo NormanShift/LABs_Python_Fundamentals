@@ -271,6 +271,55 @@ print("CPU model:", computer1.cpu.model)
 
 # H:1
 
+class Exporter:
+    def export(self, data):
+        self.data = data
+        return "This is the baseclass."
+    def __str__(self):
+        return "Generic Exporter"
+
+class ConsoleExporter(Exporter):
+    def export(self, data):
+        self.data = data
+        return f"ConsoleExporter Data: {self.data}"
+    def __str__(self):
+        return "Console Exporter. Overrides export() ."
+
+class TextExporter(Exporter):
+    def export(self, data):
+        self.data = data
+        return f"TextExporter Data: {self.data}"
+    def __str__(self):
+        return "Text Exporter. Overrides export() ."
+
+
+class SummaryExporter(Exporter):
+    def export(self, data):
+        self.data = data
+        return f"Summary Exporter Data: {self.data}"
+    def __str__(self):
+        return f"Summary Exporter. DataOverrides export() ."
+
+exporters = [
+    ConsoleExporter(),
+    TextExporter(),
+    SummaryExporter()
+]
+
+number = 1567
+
+for value in exporters:
+    print(value.export(number))
+
+# print(Exporter().export(120))
+# print(ConsoleExporter().export(1500))
+# print(ConsoleExporter())
+# print(TextExporter().export(12578))
+# print(SummaryExporter().export(322))
+
+
+
+
 
 
 #-------------------------------------

@@ -6,7 +6,10 @@ books =[]
  # A method for adding books to books[]
 def add_book(title, author, year):
     # Each book or item in the list is by it's own, a dictionary in books[]
+    book = {"title": title, "author": author, "year": year}
     books.append(book)
     print(f"Book '{title}' added to the library.")
+
+add_book("Small Beginnings", "Charles S Noman", 1921)
 
 

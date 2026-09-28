@@ -6,7 +6,10 @@ books =[]
  # A method for adding books to books[]
 def add_book(title, author, year):
     # Each book or item in the list is by it's own, a dictionary in books[]
-    book = {"title": title, "author": author, "year": year}
+    book = {"title": title,
+            "author": author,
+            "year": year,
+            "available": True}
     books.append(book)
     print(f"Book '{title}' added to the library.")
 
@@ -18,7 +21,7 @@ add_book("Small Beginnings", "Charles S Noman", 1921)
 def view_books():
     # Here book is the key being iterated over by the for loop. Each value is being accessed within [] (square brackets).
     for book in books:
-        print(f"{book["title"]} by {book["author"]} {book["year"]}")
+        print(f"{book["title"]} by {book["author"]}\nPublished: {book["year"]}\nAvailable: {book["available"]}")
 
 view_books()
 
@@ -33,3 +36,22 @@ def search_books(title):
 
 search_books("Andy Kaufman") # Returns 'No book matching: ...'
 search_books("Small Beginnings")
+
+
+# Next phase
+# Adding functionality - Borrow a Book
+def reserve_book(title):
+    for book in books:
+        if not book["available"]:
+            print(f"'{book['title']}' is already reserved.")
+            return
+
+        else:
+            book["available"] = False
+            print(f"'{book['title']}' has been reserved.")
+
+    print(f"No book matching '{title}' was found.")
+
+reserve_book("Small Beginningrfd")
+reserve_book("Small Beginnings")
+reserve_book("Small Beginnings")

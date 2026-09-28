@@ -9,7 +9,7 @@ def add_book(title, author, year):
     book = {"title": title,
             "author": author,
             "year": year,
-            "available": True}
+            "available": True} # Adding a book always sets availability to True
     books.append(book)
     print(f"Book '{title}' added to the library.")
 
@@ -42,16 +42,34 @@ search_books("Small Beginnings")
 # Adding functionality - Borrow a Book
 def reserve_book(title):
     for book in books:
-        if not book["available"]:
-            print(f"'{book['title']}' is already reserved.")
-            return
+        if book["title"].lower() == title.lower():
 
-        else:
+            if not book["available"]:
+                print(f"'{book['title']}' is already reserved!")
+                return
+
             book["available"] = False
             print(f"'{book['title']}' has been reserved.")
+            return
 
     print(f"No book matching '{title}' was found.")
 
 reserve_book("Small Beginningrfd")
 reserve_book("Small Beginnings")
 reserve_book("Small Beginnings")
+
+# A bit glitchy. Needs some fixing:
+def return_book(title):
+    for book in books:
+        if book["title"].lower() == title.lower():
+        if book["available"]:
+            print(f"{book["title"]} was already returned")
+            return
+        else:
+            book["available"] = True
+        print(f"'{book["title"]}' has been returned.")
+
+    print(f"No book matching '{title}' was found.")
+
+
+return_book("Small Beginnings")

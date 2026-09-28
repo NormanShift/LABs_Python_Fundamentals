@@ -10,6 +10,14 @@ def add_book(title, author, year):
     books.append(book)
     print(f"Book '{title}' added to the library.")
 
+# Actually adding a book to books[] (calling add_books() )
 add_book("Small Beginnings", "Charles S Noman", 1921)
 
 
+# Of course we also want a function for viewing the library books[] (the list of dictionaries (books) is the library).
+def view_books():
+    # Here book is the key being iterated over by the for loop. Each value is being accessed within [] (square brackets).
+    for book in books:
+        print(f"{book["title"]} by {book["author"]} {book["year"]}")
+
+view_books()

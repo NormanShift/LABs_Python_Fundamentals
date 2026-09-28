@@ -21,3 +21,15 @@ def view_books():
         print(f"{book["title"]} by {book["author"]} {book["year"]}")
 
 view_books()
+
+
+def search_books(title):
+    for book in books:
+        # Here we can search for the title of a book
+        if book["title"].lower() == title.lower():
+            print(f"Search results: {book["title"]} by {book["author"]} {book["year"]}")
+            return
+    print(f"No book book matching '{title}' currently in the Library")
+
+search_books("Andy Kaufman") # Returns 'No book matching: ...'
+search_books("Small Beginnings")

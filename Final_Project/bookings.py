@@ -62,14 +62,16 @@ reserve_book("Small Beginnings")
 def return_book(title):
     for book in books:
         if book["title"].lower() == title.lower():
-        if book["available"]:
-            print(f"{book["title"]} was already returned")
-            return
-        else:
+
+            if book["available"]:
+                print(f"{book["title"]} was already returned!")
+                return
+            
             book["available"] = True
-        print(f"'{book["title"]}' has been returned.")
+            print(f"'{book["title"]}' has been returned.")
+            return
 
     print(f"No book matching '{title}' was found.")
 
-
+return_book("Roaming Cattle")
 return_book("Small Beginnings")

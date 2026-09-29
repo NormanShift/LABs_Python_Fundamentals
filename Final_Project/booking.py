@@ -32,5 +32,3 @@ class Booking:
             f"{self.item.title} - {status}"
         )
 
-
-# book = Booking()

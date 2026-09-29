@@ -35,3 +35,22 @@ class AudioBook(LibraryItem):
             f"({self.year}), {self.length} minutes "
             f"- {status}"
         )
+
+
+
+
+book = Book(
+    "Small Beginnings",
+    "Charles S Noman",
+    1921
+)
+
+audio_book = AudioBook(
+    "Python Advanced",
+    "A. Developer",
+    2026,
+    420
+)
+
+print(book)
+print(audio_book)

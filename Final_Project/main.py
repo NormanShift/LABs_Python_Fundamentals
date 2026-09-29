@@ -1,12 +1,27 @@
-from library import Library
-from library_item import Book
-from user import Librarian, Member
-
+import os
+import subprocess
 
 from library import Library
 
+
+def clear_screen():
+    if os.name == "nt":
+        subprocess.run(
+            ["cmd", "/c", "cls"],
+            check=False
+        )
+    # else:
+    #     subprocess.run(
+    #         ["clear"],
+    #         check=False
+    #     )
+
+clear_screen()
 
 def librarian_menu(library):
+
+    clear_screen()
+
     while True:
         print()
         print("Librarian Menu")
@@ -16,9 +31,11 @@ def librarian_menu(library):
         choice = input("Choose an option: ").strip()
 
         if choice == "1":
+            clear_screen()
             library.view_items()
 
         elif choice == "2":
+            clear_screen()
             return
 
         else:
@@ -26,6 +43,9 @@ def librarian_menu(library):
 
 
 def member_menu(library):
+
+    clear_screen()
+
     while True:
         print()
         print("Member Menu")
@@ -35,9 +55,11 @@ def member_menu(library):
         choice = input("Choose an option: ").strip()
 
         if choice == "1":
+            clear_screen()
             library.view_items()
 
         elif choice == "2":
+            clear_screen()
             return
 
         else:
@@ -48,6 +70,8 @@ def main():
     library = Library("Lexicon Library")
 
     library.add_sample_books()
+
+    clear_screen()
 
     while True:
         print()
@@ -65,7 +89,8 @@ def main():
             member_menu(library)
 
         elif choice == "3":
-            print("Closing LMS.")
+            clear_screen()
+            print("\n... Closing LMS\n")
             break
 
         else:

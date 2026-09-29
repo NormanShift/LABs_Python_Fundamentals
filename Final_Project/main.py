@@ -3,15 +3,34 @@ from library_item import Book
 from user import Librarian, Member
 
 
-def show_menu():
-    print()
-    print("Library Booking System")
-    print("1. View items")
-    print("2. Search item")
-    print("3. Reserve item")
-    print("4. Return item")
-    print("5. View bookings")
-    print("6. Exit")
+def main():
+    library = Library("Lexicon Library")
 
-show_menu()
+    library.add_sample_books()
 
+    while True:
+        print()
+        print("Library Booking System")
+        print("1. Librarian")
+        print("2. Member")
+        print("3. Exit")
+
+        choice = input("Choose an option: ").strip()
+
+        if choice == "1":
+            librarian_menu(library)
+
+        elif choice == "2":
+            member_menu(library)
+
+        elif choice == "3":
+            print("Closing the system.")
+            break
+
+        else:
+            print("Please choose a valid option.")
+
+
+
+if __name__ == "__main__":
+    main()

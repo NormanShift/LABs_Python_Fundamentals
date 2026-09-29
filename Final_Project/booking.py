@@ -14,3 +14,23 @@ class Booking:
 
         item.available = False
 
+    def cancel(self):
+        if not self.active:
+            raise ValueError(
+                "This booking is already cancelled."
+            )
+
+        self.active = False
+        self.item.available = True
+
+    def __str__(self):
+        status = "Active" if self.active else "Cancelled"
+
+        return (
+            f"Booking {self.booking_id}: "
+            f"{self.member.name} - "
+            f"{self.item.title} - {status}"
+        )
+
+
+# book = Booking()

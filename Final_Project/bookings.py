@@ -19,7 +19,7 @@ add_book("Small Beginnings", "Charles S Noman", 1921)
 
 # Of course we also want a function for viewing the library books[] (the list of dictionaries (books) is the library).
 def view_books():
-    # Here book is the key being iterated over by the for loop. Each value is being accessed within [] (square brackets).
+    # Here book is a dictionary being iterated over by the for loop. Each value is being accessed within ["key"] (square brackets).
     for book in books:
         print(f"{book["title"]} by {book["author"]}\nPublished: {book["year"]}\nAvailable: {book["available"]}")
 
@@ -58,7 +58,7 @@ reserve_book("Small Beginningrfd")
 reserve_book("Small Beginnings")
 reserve_book("Small Beginnings")
 
-# A bit glitchy. Needs some fixing:
+# Returning a book to the library (in a real world scenario a barcode could be used)
 def return_book(title):
     for book in books:
         if book["title"].lower() == title.lower():

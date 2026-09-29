@@ -40,3 +40,14 @@ class Library:
 
         return None
 
+    def view_items(self):
+        if not self.items:
+            print("The library has no registered items.")
+            return
+
+        print(f"\nItems in {self.name}:")
+
+        for item in self.items:
+            print(item)
+
+

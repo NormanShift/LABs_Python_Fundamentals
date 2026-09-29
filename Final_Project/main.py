@@ -3,6 +3,47 @@ from library_item import Book
 from user import Librarian, Member
 
 
+from library import Library
+
+
+def librarian_menu(library):
+    while True:
+        print()
+        print("Librarian Menu")
+        print("1. View items")
+        print("2. Return to main menu")
+
+        choice = input("Choose an option: ").strip()
+
+        if choice == "1":
+            library.view_items()
+
+        elif choice == "2":
+            return
+
+        else:
+            print("Please choose a valid option.")
+
+
+def member_menu(library):
+    while True:
+        print()
+        print("Member Menu")
+        print("1. View items")
+        print("2. Return to main menu")
+
+        choice = input("Choose an option: ").strip()
+
+        if choice == "1":
+            library.view_items()
+
+        elif choice == "2":
+            return
+
+        else:
+            print("Please choose a valid option.")
+
+
 def main():
     library = Library("Lexicon Library")
 
@@ -24,7 +65,7 @@ def main():
             member_menu(library)
 
         elif choice == "3":
-            print("Closing the system.")
+            print("Closing LMS.")
             break
 
         else:

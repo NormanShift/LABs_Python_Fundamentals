@@ -16,13 +16,16 @@ def clear_screen():
     #         check=False
     #     )
 
+def pause():
+    input("\nPress Enter to continue...")
+
 clear_screen()
 
 def librarian_menu(library):
 
-    clear_screen()
 
     while True:
+        clear_screen()
         print()
         print("Librarian Menu")
         print("1. View items")
@@ -33,20 +36,23 @@ def librarian_menu(library):
         if choice == "1":
             clear_screen()
             library.view_items()
+            input("\n Press Enter to continue...")
 
         elif choice == "2":
-            clear_screen()
+            # clear_screen()
             return
 
         else:
+            clear_screen()
             print("Please choose a valid option.")
+            pause()
 
 
 def member_menu(library):
 
-    clear_screen()
 
     while True:
+        clear_screen()
         print()
         print("Member Menu")
         print("1. View items")
@@ -57,13 +63,16 @@ def member_menu(library):
         if choice == "1":
             clear_screen()
             library.view_items()
+            pause()
 
         elif choice == "2":
-            clear_screen()
+            # clear_screen()
             return
 
         else:
+            clear_screen()
             print("Please choose a valid option.")
+            pause
 
 
 def main():
@@ -71,9 +80,9 @@ def main():
 
     library.add_sample_books()
 
-    clear_screen()
 
     while True:
+        clear_screen()
         print()
         print("Library Booking System")
         print("1. Librarian")
@@ -89,12 +98,13 @@ def main():
             member_menu(library)
 
         elif choice == "3":
-            clear_screen()
+            # clear_screen()
             print("\n... Closing LMS\n")
             break
 
         else:
             print("Please choose a valid option.")
+            pause()
 
 
 

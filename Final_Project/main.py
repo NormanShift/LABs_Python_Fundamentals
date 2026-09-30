@@ -19,7 +19,6 @@ def clear_screen():
 def pause():
     input("\nPress Enter to continue...")
 
-clear_screen()
 
 def librarian_menu(library):
 
@@ -36,14 +35,14 @@ def librarian_menu(library):
         if choice == "1":
             clear_screen()
             library.view_items()
-            input("\n Press Enter to continue...")
+            pause()
 
         elif choice == "2":
             # clear_screen()
             return
 
         else:
-            clear_screen()
+            
             print("Please choose a valid option.")
             pause()
 
@@ -70,9 +69,9 @@ def member_menu(library):
             return
 
         else:
-            clear_screen()
+            # clear_screen()
             print("Please choose a valid option.")
-            pause
+            pause()
 
 
 def main():
@@ -98,7 +97,7 @@ def main():
             member_menu(library)
 
         elif choice == "3":
-            # clear_screen()
+            clear_screen()
             print("\n... Closing LMS\n")
             break
 

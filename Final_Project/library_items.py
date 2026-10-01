@@ -7,14 +7,14 @@ class LibraryItem:
         self.year = year
         self.available = True
 
+    # Purpose: For reserving the item by the librarian and members.
     def __str__(self):
         status = "Available" if self.available else "Reserved"
-
         return(
             f"{self.title} by {self.author}"
             f"({self.year}) - {status}"
         )
-
+    # Purpose: For saving the item to a JSON file.
     def to_dict(self):
         return {
             "type": "library_item",

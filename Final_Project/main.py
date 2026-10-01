@@ -107,8 +107,10 @@ def member_menu(library):
 
 def main():
     library = Library("Lexicon Library")
+    library.load_items()  # Load items from the JSON file
 
-    library.add_sample_books()
+    if not library.items:
+        library.add_sample_books()
 
 
     while True:

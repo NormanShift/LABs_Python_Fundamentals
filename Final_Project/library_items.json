@@ -1,0 +1,23 @@
+[
+    {
+        "type": "book",
+        "title": "Small Beginnings",
+        "author": "Charles S Noman",
+        "year": 1921,
+        "available": true
+    },
+    {
+        "type": "book",
+        "title": "Python Fundamentals",
+        "author": "A. Developer",
+        "year": 2026,
+        "available": true
+    },
+    {
+        "type": "book",
+        "title": "Biocepular",
+        "author": "Karl Christian Norman",
+        "year": 2026,
+        "available": true
+    }
+]

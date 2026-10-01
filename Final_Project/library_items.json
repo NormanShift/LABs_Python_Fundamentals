@@ -19,5 +19,12 @@
         "author": "Karl Christian Norman",
         "year": 2026,
         "available": true
+    },
+    {
+        "type": "book",
+        "title": "HELLM - High Entropy Large Language Model",
+        "author": "Dark Primus",
+        "year": 1666,
+        "available": true
     }
 ]

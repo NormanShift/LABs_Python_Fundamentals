@@ -72,10 +72,28 @@ class Library:
             self.items.append(item)
 
 
-
     def add_item(self, item):
+        for existing_item in self.items:
+            same_title = (
+                existing_item.title.lower()
+                == item.title.lower()
+            )
+
+            same_author = (
+                existing_item.author.lower()
+                == item.author.lower()
+            )
+
+            same_year = existing_item.year == item.year
+
+            if same_title and same_author and same_year:
+                raise ValueError(
+                    f"'{item.title}' is already registered."
+                )
+
         self.items.append(item) # Adding a library item to the list of items[] .
         self.save_items() # Save the updated list of items to the JSON file.
+
 
     def add_user(self, user):
         self.users.append(user) # Member or Librarian

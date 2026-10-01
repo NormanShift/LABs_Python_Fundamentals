@@ -11,7 +11,7 @@ class LibraryItem:
     def __str__(self):
         status = "Available" if self.available else "Reserved"
         return(
-            f"{self.title} by {self.author}"
+            f"{self.title} by {self.author} "
             f"({self.year}) - {status}"
         )
     # Purpose: For saving the item to a JSON file.
@@ -72,20 +72,36 @@ class AudioBook(LibraryItem):
             }
 
 
+ # Obsolete tests:
+# book = Book(
+#     "Small Beginnings",
+#     "Charles S Noman",
+#     1921
+# )
 
+# audio_book = AudioBook(
+#     "Python Advanced",
+#     "A. Developer",
+#     2026,
+#     420
+# )
 
-book = Book(
-    "Small Beginnings",
-    "Charles S Noman",
-    1921
-)
+# print(book)
+# print(audio_book)
 
-audio_book = AudioBook(
-    "Python Advanced",
-    "A. Developer",
-    2026,
-    420
-)
+if __name__ == "__main__":
+    book = Book(
+        "Small Beginnings",
+        "Charles S Noman",
+        1921
+    )
 
-print(book)
-print(audio_book)
+    audio_book = AudioBook(
+        "Python Advanced",
+        "A. Developer",
+        2026,
+        420
+    )
+
+    print(book)
+    print(audio_book)

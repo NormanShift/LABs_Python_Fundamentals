@@ -17,6 +17,7 @@ def clear_screen():
         subprocess.run(
             ["clear"],
             check=False
+            
         )
 
 
@@ -38,9 +39,14 @@ def add_book_from_input(library):
         return
 
     book = Book(title, author, year)
-    library.add_item(book)
 
-    print(f"\n'{book.title}' was added.")
+    try:
+        library.add_item(book)
+        print(f"\n'{book.title}' was added.")
+
+    except ValueError as error:
+        print(f"\nCould not add book: {error}")
+
     pause()
 
 

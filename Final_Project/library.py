@@ -1,6 +1,9 @@
 # Responsibility: Collections of library items, users and bookings
 
-from library_item import Book
+import json
+from pathlib import Path
+
+from library_items import Book, AudioBook
 
 
 class Library:

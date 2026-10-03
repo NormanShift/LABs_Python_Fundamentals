@@ -3,27 +3,7 @@ import subprocess
 
 from library_items import Book
 from library import Library
-
-
-# Helper functions:
-
-def clear_screen():
-    if os.name == "nt":
-        subprocess.run(
-            ["cmd", "/c", "cls"],
-            check=False
-        )
-    else:
-        subprocess.run(
-            ["clear"],
-            check=False
-            
-        )
-
-
-def pause():
-    input("\nPress Enter to continue...")
-
+from helpers import clear_screen, pause
 
 def add_book_from_input(library):
     print("\nAdd a new book")
@@ -92,6 +72,7 @@ def member_menu(library):
         print()
         print("Member Menu")
         print("1. View items")
+        # print("2. Reserve item")
         print("2. Return to main menu")
 
         choice = input("Choose an option: ").strip()

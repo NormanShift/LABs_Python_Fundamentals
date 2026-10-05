@@ -8,17 +8,17 @@ SELECT * FROM products WHERE category = 'Shoes';
 SELECT * FROM customers WHERE city = 'Uppsala';
 -- 4.
 SELECT * from products WHERE price = 199;
---  .
+-- 5.
 SELECT * FROM products ORDER BY name;
---  .
+-- 6.
 SELECT * FROM customers order by joined_date;
---  .
+-- 7.
 SELECT * from products WHERE stock < 1;
-
+-- 8.
 SELECT * FROM customers order by joined_date DESC LIMIT 3;
---  .
+-- 9.
 SELECT * FROM customers WHERE city IN ('Stockholm', 'Göteborg');
---  .
+-- 10.
 SELECT name AS product_name, price AS price_sek FROM products;
 
 
@@ -30,7 +30,8 @@ SELECT name, price, stock, (price * stock) AS stock_value from products WHERE st
 -- B3.
 SELECT * FROM customers WHERE first_name LIKE '____';
 -- B4.
-
+SELECT * FROM products ORDER BY price ASC LIMIT 5, 5;
 -- B5.
 
+SELECT * FROM customers WHERE joined_date < 2025 AND city IS NOT 'Uppsala' ORDER BY city, last_name;
 

@@ -37,3 +37,8 @@ CREATE table reviews(
 INSERT INTO reviews VALUES (1, 12, 5, 'Great!!!');
 
 -- E7.
+INSERT INTO reviews VALUES (1, 50, 5, 'Greater still!!!'); -- This gives the following error because there is no "product_id 50": Result: UNIQUE constraint failed: reviews.review_id
+
+-- E8.
+
+

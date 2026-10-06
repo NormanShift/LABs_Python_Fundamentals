@@ -32,6 +32,9 @@ SELECT * FROM customers WHERE first_name LIKE '____';
 -- B4.
 SELECT * FROM products ORDER BY price ASC LIMIT 5, 5;
 -- B5.
+SELECT * FROM customers WHERE joined_date < '2025-01-01' AND city != 'Uppsala' ORDER BY city, last_name;
 
-SELECT * FROM customers WHERE joined_date < 2025 AND city IS NOT 'Uppsala' ORDER BY city, last_name;
 
+
+
+SELECT * FROM products WHERE name LIKE '% %' AND stock > 0 AND category IS NOT 'Accessories' ORDER BY category ASC, price DESC;

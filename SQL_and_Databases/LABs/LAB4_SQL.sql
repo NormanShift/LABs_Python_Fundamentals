@@ -37,4 +37,39 @@ JOIN products AS p
 WHERE p.category = 'Shoes';
 
 
+-- E6
+SELECT
+	p.name,
+	oi.quantity,
+	oi.unit_price,
+	oi.quantity * oi.unit_price AS line_total
+FROM order_items AS oi
+JOIN products AS p ON oi.product_id = p.product_id
+WHERE oi.order_id = 10;
+
+
+-- E7
+SELECT
+	c.first_name,
+	o.order_date
+FROM customers AS c
+JOIN orders AS o
+    ON c.customer_id = o.customer_id
+JOIN order_items AS oi
+    ON o.order_id = oi.order_id
+JOIN products AS p
+    ON oi.product_id = p.product_id
+WHERE p.name = 'Hoodie Black';
+
+
+-- E8
+SELECT
+	c.first_name,
+	c.last_name,
+	o.order_id
+FROM customers AS c
+LEFT JOIN orders AS o
+    ON c.customer_id = o.customer_id;
+
+
 

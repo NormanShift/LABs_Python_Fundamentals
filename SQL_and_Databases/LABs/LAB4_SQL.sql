@@ -72,4 +72,28 @@ LEFT JOIN orders AS o
     ON c.customer_id = o.customer_id;
 
 
+-- E9
+SELECT
+	p.name,
+	oi.order_id
+FROM products AS p
+LEFT JOIN order_items AS oi
+    ON p.product_id = oi.product_id
+WHERE oi.order_id IS NULL;
+
+
+-- E10
+SELECT
+	c.first_name,
+	p.name,
+	oi.quantity
+FROM customers AS c
+JOIN orders AS o
+    ON c.customer_id = o.customer_id
+JOIN order_items AS oi
+    ON o.order_id = oi.order_id
+JOIN products AS p
+    ON oi.product_id = p.product_id
+WHERE c.city = 'Uppsala';
+
 

@@ -315,3 +315,6 @@ cython_debug/
 
 # Abstra
 .abstra/
+
+Final_Project/__pycache__/user.cpython-314.pyc
+Final_Project/__pycache__/library.cpython-314.pyc

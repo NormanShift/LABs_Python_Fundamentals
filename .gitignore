@@ -1,0 +1,317 @@
+# ==========================================
+# Python
+# ==========================================
+
+# Byte-compiled and optimized files
+__pycache__/
+*.py[codz]
+*$py.class
+
+# Compiled C extensions
+*.so
+
+# ==========================================
+# Virtual environments
+# ==========================================
+
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+__pypackages__/
+
+# ==========================================
+# Environment variables and secrets
+# ==========================================
+
+.env
+.env.*
+!.env.example
+.envrc
+
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ==========================================
+# Distribution and packaging
+# ==========================================
+
+.Python
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==========================================
+# PyInstaller
+# ==========================================
+
+*.manifest
+*.spec
+
+# ==========================================
+# Installer logs
+# ==========================================
+
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ==========================================
+# Tests and coverage
+# ==========================================
+
+.pytest_cache/
+.hypothesis/
+.tox/
+.nox/
+.cache/
+
+.coverage
+.coverage.*
+htmlcov/
+cover/
+
+coverage.xml
+nosetests.xml
+junit.xml
+
+*.cover
+*.py.cover
+*.lcov
+
+# ==========================================
+# Type checking and linting
+# ==========================================
+
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+.pyre/
+.pytype/
+.pyright/
+.ruff_cache/
+
+# ==========================================
+# Jupyter and IPython
+# ==========================================
+
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# ==========================================
+# Python dependency managers
+# ==========================================
+
+# Lock files are normally committed for applications.
+# Uncomment only if your project has a specific reason
+# not to track them.
+
+# Pipfile.lock
+# poetry.lock
+# pdm.lock
+# uv.lock
+# pixi.lock
+
+.pdm-python
+.pdm-build/
+
+.pixi/*
+!.pixi/config.toml
+
+# ==========================================
+# Frameworks
+# ==========================================
+
+# Django
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask
+instance/
+.webassets-cache/
+
+# Scrapy
+.scrapy/
+
+# Celery
+celerybeat-schedule*
+celerybeat.pid
+
+# ==========================================
+# Documentation and site generators
+# ==========================================
+
+docs/_build/
+site/
+.pybuilder/
+target/
+
+# ==========================================
+# Translations
+# ==========================================
+
+*.mo
+*.pot
+
+# ==========================================
+# Databases and service data
+# ==========================================
+
+# General local databases
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite3-journal
+
+# MongoDB local data
+mongo-data/
+data/db/
+mongod.log
+
+# Redis
+*.rdb
+*.aof
+
+# RabbitMQ
+mnesia/
+rabbitmq/
+rabbitmq-data/
+
+# ActiveMQ
+activemq-data/
+
+# ==========================================
+# Logs and runtime files
+# ==========================================
+
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# ==========================================
+# Editors and IDEs
+# ==========================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# Vim and other editors
+*.swp
+*.swo
+*~
+
+# ==========================================
+# Temporary and backup files
+# ==========================================
+
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+
+tmp/
+temp/
+.cache/
+
+# ==========================================
+# Operating-system files
+# ==========================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+.Trash-*
+
+# ==========================================
+# Node.js and frontend tooling
+# ==========================================
+
+node_modules/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.npm/
+.yarn/
+.pnpm-store/
+
+# Frontend build output
+.next/
+.nuxt/
+.svelte-kit/
+.parcel-cache/
+.vite/
+coverage/
+
+# ==========================================
+# Local project output
+# ==========================================
+
+output/
+reports/
+artifacts/
+
+# ==========================================
+# Miscellaneous Python tools
+# ==========================================
+
+# Cython
+cython_debug/
+
+# SageMath
+*.sage.py
+
+# Abstra
+.abstra/

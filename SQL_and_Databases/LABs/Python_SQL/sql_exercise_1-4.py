@@ -49,12 +49,10 @@ conn.close()
 #----------------------------------
 # e4:
 
-# e4:
-
 """
-Building an SQL query with an f-string is dangerous because the user's input
-becomes part of the SQL code. A malicious or unexpected input could therefore
-change the meaning of the query, which is called SQL injection.
+Building an SQL query with an f-string is ill adviced because user input
+becomes part of the SQL code.
+A malicious hacker or unexpected input could therefore change the intended output of the query, which is refered to as "SQL injection".
 
 A ? placeholder is safer because the SQL command and the supplied value are
 handled separately. The input is treated as data rather than executable SQL.

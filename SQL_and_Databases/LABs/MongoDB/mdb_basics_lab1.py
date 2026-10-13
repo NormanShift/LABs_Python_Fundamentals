@@ -1,6 +1,8 @@
 # Exercises: MongoDB basics - Day 1 - LEXICON HT2026
 # Running this script will connect to the MongoDB server, access the 'webshop' database, and perform various queries on the 'products' and 'customers' collections.
 
+from datetime import datetime
+from pprint import pprint
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')  # Connect to the MongoDB server
@@ -33,3 +35,19 @@ print("Number of customers in Uppsala:", count)
 # e5:
 find_one_result = db.products.find_one({"name":"Sandals"})
 print("Sandals in stock:",find_one_result.get("stock"))
+
+
+# e6:
+for customer in db.customers.find():
+    if customer.get("newsletter") == True:
+        print(customer["first_name"], "gets the newsletter")  # Print the first name of each document in the 'customers' collection where the newsletter field is True
+
+# e7:
+insert_self = db.customers.insert_one({"first_name": "Christian", "last_name": "Norman", "email": "christian.norman@slottington.se", "city": "Fööruurten", "joined": datetime(2026,10,13), "newsletter": True, "phone": "070-1234567"})  # Insert a new document ("myself") into the 'customers' collection
+print("Inserted myself without _id:", insert_self.inserted_id)  # Print the _id of the inserted document
+find_oneself = db.customers.find_one({"first_name": "Christian", "last_name": "Norman"})
+
+pprint(find_oneself)  # Pretty print the document that was just inserted into the 'customers' collection
+
+
+# e8:

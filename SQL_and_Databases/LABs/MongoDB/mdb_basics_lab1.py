@@ -51,3 +51,11 @@ pprint(find_oneself)  # Pretty print the document that was just inserted into th
 
 
 # e8:
+insert_products = db.products.insert_many([
+    {"_id": 13, "name": "Sunglasses", "category": "Accessories", "price": 49.99, "stock": 100, "tags": ["summer", "fashion"], "details": {"color": "black"}},
+    {"_id": 14, "name": "Backpack", "category": "Accessories", "price": 79.99, "stock": 50, "tags": ["travel", "fashion"], "details": {"color": "blue"}}])
+
+print("Products in the collection:", db.products.count_documents({}))  # Print the total number of documents in the 'products' collection
+
+
+# e9:

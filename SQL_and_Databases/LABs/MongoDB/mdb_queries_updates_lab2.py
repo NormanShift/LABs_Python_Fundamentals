@@ -63,5 +63,12 @@ for product in products_sport:
 
 #-----------------------------------------------------
 
-# e#:
+# e6:
+
+cheap_charlie = database.products.find({}, {"_id": 0, "name": 1, "price": 1}).sort("price", 1).limit(5)
+
+for cheapest in cheap_charlie:
+    print(cheapest)
+
+# e7:
 

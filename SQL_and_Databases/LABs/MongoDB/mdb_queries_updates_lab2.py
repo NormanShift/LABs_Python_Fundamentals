@@ -45,4 +45,23 @@ for customer in city_project:
 
 #-----------------------------------------------------
 
+# e4:
+
+color_wq = database.products.find({"details.color": "white"}, {"_id": 0, "name": 1, "details": "white"})
+
+for product in color_wq:
+    print(product)
+
+#-----------------------------------------------------
+
+# e5:
+
+products_sport = database.products.find({"tags":"sport"}, {"_id": 0, "name": 1, "tags": 1}) # Here we are searching in arrays under the tags field.
+
+for product in products_sport:
+    print(product)
+
+#-----------------------------------------------------
+
 # e#:
+

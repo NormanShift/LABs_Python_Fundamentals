@@ -1,6 +1,6 @@
 # Exercises: MongoDB - Queries and Updates - Day 2 - LEXICON HT2026
 
-#from datetime import datetime
+from datetime import datetime
 # from pprint import pprint
 from pymongo import MongoClient
 
@@ -82,13 +82,50 @@ database = client['webshop']
 
 # e8:
 
-increase_price = database.products.update_many({"category": "Accessories"}, {"$inc": {"price": 20}}) # Run at your own risk. To reset the database to it's default state, perferably run seed_webshop.py .
+# increase_price = database.products.update_many({"category": "Accessories"}, {"$inc": {"price": 20}}) # Run at your own risk. To reset the database to it's default state, perferably run seed_webshop.py .
 
-accessories = database.products.find({"category": "Accessories"}, {"_id": 1, "category": 1, "price": 1})
+# accessories = database.products.find({"category": "Accessories"}, {"_id": 1, "category": 1, "price": 1})
 
-for prod in accessories:
-    print(prod)
+# for prod in accessories:
+#     print(prod)
 
 #-----------------------------------------------------
 
 # e9:
+# # Solution 1 (two steps):
+# tag_new = database.products.update_one({"_id": 11}, {"$push": {"tags": "new"}}, upsert=True)
+
+# field_new1 = database.products.update_one({"_id": 11}, {"$set": {"restock_date": datetime.now()}})
+
+# # Solution 2 (one step):
+# tag_field = database.products.update_one(
+#     {"_id": 11},
+#     {
+#         "$addToSet": {"tags": "new"},
+#         "$set": {"restock_date": datetime.now()}
+#     }
+# )
+
+# result = database.products.find({"_id": 11})
+
+# for prod in result:
+#     print(prod)
+
+
+#-----------------------------------------------------
+# e10:
+
+order_filter = {
+    "status": "new",
+    "order_date": {"$lt": datetime(2026, 3, 20)}
+}
+
+# The idea is to use the same filter. First for the retrieval, then the delete.
+
+order_count = database.orders.count_documents(order_filter)
+
+print("Orders found:", order_count)
+
+delete_result = database.orders.delete_many(order_filter)
+
+print("Orders deleted:", delete_result.deleted_count)

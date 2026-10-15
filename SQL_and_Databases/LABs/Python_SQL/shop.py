@@ -39,18 +39,56 @@ def change_stock(conn):
     product_id = int(input("Product ID: "))
     new_stock = int(input("Stock: "))
     
-    cursor = conn.execute(
+    conn.execute(
         "UPDATE products SET stock = ? WHERE product_id = ?",
         (new_stock, product_id)
     )
     conn.commit()
     print("Saved!")
 
+def show_receipt(conn):
+    order_id = int(input("Order ID: "))
+
+    cursor = conn.execute("""
+        SELECT products.name,
+               order_items.quantity,
+               order_items.unit_price
+        FROM order_items
+        JOIN products
+            ON order_items.product_id = products.product_id
+        WHERE order_items.order_id = ?
+    """, (order_id,))
+
+    rows = cursor.fetchall()
+
+    if not rows:
+        print("Order not found, or the order has no items.")
+        return
+
+    total = 0
+
+    print(f"\nReceipt for order {order_id}")
+    print("-" * 52)
+
+    for name, quantity, unit_price in rows:
+        line_total = quantity * unit_price
+        total += line_total
+
+        print(
+            f"{name:<20} "
+            f"{quantity:>3} x "
+            f"{unit_price:>8.2f} kr = "
+            f"{line_total:>8.2f} kr"
+        )
+
+    print("-" * 52)
+    print(f"{'Total:':>41} {total:>8.2f} kr")
+
 
 def main():
     conn = connect()
     while True:
-        print("\n1) List products  2) Search customers  3) Add product  4) Change stock  0) Quit")
+        print("\n1) List products\n2) Search customers\n3) Add product\n4) Change stock\n5) Show orders receipt\n0) Quit")
         choice = input("> ")
         if choice == "1":
             list_products(conn)
@@ -60,6 +98,8 @@ def main():
             add_product(conn)
         elif choice == "4":
             change_stock(conn)
+        elif choice == "5":
+            show_receipt(conn)
         elif choice == "0":
             break
     conn.close()

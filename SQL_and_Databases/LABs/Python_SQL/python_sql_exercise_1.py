@@ -33,18 +33,18 @@ conn.close() """
 #----------------------------------
 # e3:
 
-category = input("Available categories: Clothing, Accessories, Shoes\nEnter a product category: ")
+# category = input("Available categories: Clothing, Accessories, Shoes\nEnter a product category: ")
 
-cursor.execute(
-    '''SELECT COUNT(*) FROM products WHERE category = ?''',
-    (category,)
-)
+# cursor.execute(
+#     '''SELECT COUNT(*) FROM products WHERE category = ?''',
+#     (category,)
+# )
 
-product_count = cursor.fetchone()[0]
+# product_count = cursor.fetchone()[0]
 
-print(f"Category: {category}, Number of products: {product_count}")
+# print(f"Category: {category}, Number of products: {product_count}")
 
-conn.close()
+# conn.close()
 
 #----------------------------------
 # e4:
@@ -59,5 +59,25 @@ handled separately. The input is treated as data rather than executable SQL.
 """
 
 #----------------------------------
-# e5:
+# For exercises 5-8, see shop.py.
+
+# e9:
+
+customer_id = 1
+
+cursor.execute(
+    '''SELECT DISTINCT products.name
+        FROM orders
+        JOIN order_items
+	    ON orders.order_id = order_items.order_id
+        JOIN products
+	    ON order_items.product_id = products.product_id
+        WHERE orders.customer_id = ?''', (customer_id,))
+
+products = cursor.fetchall()
+
+for (product_name,) in products:
+    print(product_name)
+
+conn.close()
 

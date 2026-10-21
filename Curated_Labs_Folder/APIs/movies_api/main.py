@@ -19,20 +19,37 @@ movies = [
     {"id": 4, "title": "Dreamcatcher", "director": "Lawrence Kasdan", "year": 2003}
 ]
 
-@app.get("/movies")
-def get_books():
-    return movies
+# @app.get("/movies")
+# def get_movies():
+#     return movies
 
 # ------
 
 # e2:
 
 @app.get("/movies/{movie_id}")
-def get_movie(movie_id: int):
+def find_movie(movie_id: int):
     for movie in movies:
         if movie['id'] == movie_id:
             return movie
     raise HTTPException(status_code=404, detail="No Movie found!")
 
 # e3:
+
+@app.get("/movies")
+def get_movies(director: str | None = None, year: int | None = None):
+
+    result = movies
+
+    if director:
+        result = [movie for movie in result if director.lower() in movie["director"].lower()
+        ]
+    if year is not None:
+        result = [
+            movie
+            for movie in result if movie["year"] == year
+        ]
+
+    return result
+
 

@@ -27,6 +27,16 @@ def find_movie(movie_id: int):
     raise HTTPException(status_code=404, detail="No Movie found!")
 
 
+# Part 2 e1:
+
+class MovieUpdate(BaseModel):
+    title: str | None = None
+    director: str | None = None
+    year: int | None = None
+    
+#changes.model_dump(exclude_unset=True)   # only the fields the client sent
+
+
 # e4 (exercise out of order as intended)
 class Movie(BaseModel): # Pydantic BaseModel
     title: str
@@ -110,5 +120,21 @@ def delete_movie(movie_id: int):
 # If the same movie is deleted twice, the second request calls find_movie() and receives the 404 response.
 # Saving the file restarts the development server. Additions, Replacements, and Deletions disappear because movies is currently stored only in RAM.
 
-# e6:
+# e6 (See the exercise PDF.)
+
+# Part 2 e1:
+
+@app.patch("/movies/{movie_id}")
+def patch_movie(movie_id: int, movie_update: MovieUpdate):
+    existing = find_movie(movie_id)
+
+    changes = movie_update.model_dump(exclude_unset=True)
+    existing.update(changes)
+
+    return existing
+
+# Part 2 e4 answer:
+# PUT is used to replace an existing movie, so the client must send all fields.
+# PATCH is used to update only selected fields, while all other fields remain unchanged.
+
 

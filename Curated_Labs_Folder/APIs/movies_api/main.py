@@ -19,6 +19,21 @@ movies = [
     {"id": 4, "title": "Dreamcatcher", "director": "Lawrence Kasdan", "year": 2003}
 ]
 
+# e5 (out of order as expected)
+def find_movie(movie_id: int):
+    for movie in movies:
+        if movie['id'] == movie_id:
+            return movie
+    raise HTTPException(status_code=404, detail="No Movie found!")
+
+
+# e4 (exercise out of order as intended)
+class Movie(BaseModel): # Pydantic BaseModel
+    title: str
+    director: str
+    year: int
+
+
 # @app.get("/movies")
 # def get_movies():
 #     return movies
@@ -28,11 +43,13 @@ movies = [
 # e2:
 
 @app.get("/movies/{movie_id}")
-def find_movie(movie_id: int):
-    for movie in movies:
-        if movie['id'] == movie_id:
-            return movie
-    raise HTTPException(status_code=404, detail="No Movie found!")
+def get_movie(movie_id: int):
+    return find_movie(movie_id)
+# def find_movie(movie_id: int):
+#     for movie in movies:
+#         if movie['id'] == movie_id:
+#             return movie
+#     raise HTTPException(status_code=404, detail="No Movie found!")
 
 # e3:
 
@@ -52,4 +69,46 @@ def get_movies(director: str | None = None, year: int | None = None):
 
     return result
 
+
+# e4 (also see the BaseModel class):
+
+@app.post("/movies",
+          status_code=201)
+def create_movie(movie: Movie):
+    new_id = max((m["id"] for m in movies), default=0) + 1
+    new_movie = {"id": new_id,
+                 "title": movie.title,
+                 "director": movie.director,
+                 "year": movie.year}
+    movies.append(new_movie)
+    return new_movie
+
+# Omitting director and year returns 422 because both fields are required.
+# Sending non-numeric text as year also returns 422 because Movie requires year to be an integer.
+# The error response shows which field is wrong under "loc" and explains the problem under "msg".
+
+# e5:
+
+# e5:
+
+@app.put("/movies/{movie_id}")
+def replace_movie(movie_id: int, movie: Movie):
+    existing = find_movie(movie_id)
+
+    existing["title"] = movie.title
+    existing["director"] = movie.director
+    existing["year"] = movie.year
+
+    return existing
+
+
+@app.delete("/movies/{movie_id}", status_code=204)
+def delete_movie(movie_id: int):
+    existing = find_movie(movie_id)
+    movies.remove(existing)
+
+# If the same movie is deleted twice, the second request calls find_movie() and receives the 404 response.
+# Saving the file restarts the development server. Additions, Replacements, and Deletions disappear because movies is currently stored only in RAM.
+
+# e6:
 

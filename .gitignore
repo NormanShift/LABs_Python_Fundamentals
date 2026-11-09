@@ -318,3 +318,5 @@ cython_debug/
 
 Final_Project/__pycache__/user.cpython-314.pyc
 Final_Project/__pycache__/library.cpython-314.pyc
+Final_Project/main.py
+Curated_Labs_Folder/Data_analysis_and_visualisation/data/listings.csv
